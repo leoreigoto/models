@@ -1,5 +1,5 @@
 
-my custom modification of tensorflow model
+my custom modification of tensorflow model to use on my collab app
 
 
 
