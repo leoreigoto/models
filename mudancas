@@ -1,3 +1,7 @@
+criado globalcoord.py em object_detection/utils
+
+
+
 visual.py
 linha  46 -> from object_detection.utils import globalcoord
 
@@ -7,3 +11,5 @@ linha 162 a 166
   temp__=str(display_str_list[0])
   temp__=temp__.split(':')
   globalcoord.labels_coord.append([temp__[0],temp__[1].split('%')])
+  
+  
