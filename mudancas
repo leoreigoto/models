@@ -1,0 +1,9 @@
+visual.py
+linha  46 -> from object_detection.utils import globalcoord
+
+linha 162 a 166
+  globalcoord.coord_x.append([xmin,xmax])
+  globalcoord.coord_y.append([ymin,ymax])
+  temp__=str(display_str_list[0])
+  temp__=temp__.split(':')
+  globalcoord.labels_coord.append([temp__[0],temp__[1].split('%')])
