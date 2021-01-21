@@ -42,6 +42,9 @@ from object_detection.core import keypoint_ops
 from object_detection.core import standard_fields as fields
 from object_detection.utils import shape_utils
 
+
+from object_detection.utils import globalcoord
+
 _TITLE_LEFT_MARGIN = 10
 _TITLE_TOP_MARGIN = 10
 STANDARD_COLORS = [
@@ -156,6 +159,11 @@ def draw_bounding_box_on_image_array(image,
       ymin, xmin, ymax, xmax as relative to the image.  Otherwise treat
       coordinates as absolute.
   """
+  globalcoord.coord_x.append([xmin,xmax])
+  globalcoord.coord_y.append([ymin,ymax])
+  temp__=str(display_str_list[0])
+  temp__=temp__.split(':')
+  globalcoord.labels_coord.append([temp__[0],temp__[1].split('%')])
   image_pil = Image.fromarray(np.uint8(image)).convert('RGB')
   draw_bounding_box_on_image(image_pil, ymin, xmin, ymax, xmax, color,
                              thickness, display_str_list,
